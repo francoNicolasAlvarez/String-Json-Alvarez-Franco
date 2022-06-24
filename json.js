@@ -12,7 +12,8 @@ button.addEventListener("click", () => {
     let arr = ((texto.trim()).slice(1, -1)).split(",");
     
     arr.forEach(element => {
-        //a cada elemento del array arr lo divido y creo un nuevo array "a" en cada ciclo 
+        //a cada elemento del array arr lo divido y creo un nuevo array "a" 
+        //en cada ciclo con la la key en la posicion[0] y el valor en la posicion[1]
 
         a = element.split(":");
 
