@@ -38,11 +38,7 @@ button.addEventListener("click", () => {
         }
         else if (a[1].indexOf("[") > 0) {
 
-            /* en esta ocacion intente hacer un corte cuando empieze y termine en []
-            respectivamente, pero como hayh "," dentro del parentesis esto no puede funcionar
-            /(json[(a[1].trim()).slice(a[1].indexOf("["),a[1].indexOf("]")+1)]);
-            json[(a[0].trim()).slice(1,-1)] = json[a[1].slice(a[1].indexOf("["),a[1].indexOf("]")+1)];
-            */
+            
 
             //creo un array separando directamente del texto inicial lo que se encontraba entre corchetes 
             //y luego se lo doy al json, lo guarda como un texto dentro del array
