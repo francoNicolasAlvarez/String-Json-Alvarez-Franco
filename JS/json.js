@@ -49,16 +49,19 @@ button.addEventListener("click", () => {
         }
         else if (a[1].indexOf("[") > 0) {
 
-            
+            let provisorio=[];
             llaves=true
             //creo un array separando directamente del texto inicial lo que se encontraba entre corchetes 
             //y luego se lo doy al json, lo guarda como un texto dentro del array
-            let saveArray = [(texto.slice(texto.indexOf("[")+1, texto.indexOf("]")))];
-            
+            let saveArray = (((texto.slice(texto.indexOf("[")+1, texto.indexOf("]")))).split("\n"));
+            saveArray.forEach(element => {
+              
+              provisorio.push(element.replace(/ /gi,"").replace(/"/gi,"").replace(/,/gi,""));
+            });
             
             
             //json[(a[0].trim()).slice(1, -1)] = saveArray;
-           json[trimTxt(a[0])]=saveArray;
+           json[trimTxt(a[0])]=provisorio;
         }
         else {
             try {
