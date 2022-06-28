@@ -55,6 +55,7 @@ button.addEventListener("click", () => {
             catch { }
         }
     });
+    alert(`El bloque de texto se a voncertido en un objeto JSON de nombre "json"`)
 })
 
 
