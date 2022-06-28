@@ -53,8 +53,10 @@ button.addEventListener("click", () => {
             llaves=true
             //creo un array separando directamente del texto inicial lo que se encontraba entre corchetes 
             //y luego se lo doy al json, lo guarda como un texto dentro del array
-            let saveArray = [(texto.slice(texto.indexOf("["), texto.indexOf("]") + 1))];
-
+            let saveArray = [(texto.slice(texto.indexOf("[")+1, texto.indexOf("]")))];
+            
+            
+            
             //json[(a[0].trim()).slice(1, -1)] = saveArray;
            json[trimTxt(a[0])]=saveArray;
         }
@@ -70,7 +72,8 @@ button.addEventListener("click", () => {
             llaves=false
         }
     });
-    alert(`El bloque de texto se a voncertido en un objeto JSON de nombre "json"`)
+    alert(`El bloque de texto se a voncertido en un objeto JSON de nombre "json"`);
+    console.log(json);
 })
 
 
