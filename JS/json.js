@@ -10,7 +10,7 @@ function trimTxt(j){
 let texto = "";
 button.addEventListener("click", () => {
     texto = document.getElementById('textarea').value;
-
+    let llaves=false;
     //creo un array con la divicion que hace split dividiendo cuando encuentra una ","
     //y hago trim y slice para eliminar los espacios y las comillas que se crean cuando se divide con trimTxt
     let arr = (trimTxt(texto)).split(",");
@@ -20,9 +20,10 @@ button.addEventListener("click", () => {
         //en cada ciclo con la la key en la posicion[0] y el valor en la posicion[1]
         
         a = element.split(":");
-
+        
         //pregunto si el segundo elemento del array, que es el valor de la propiedad
         //es un numero al intentar convertirlo en un float con el parse
+        if(llaves==false){
         if (!isNaN(parseFloat(a[1]))) {
 
             //siempre que cree un string con split le agrega comillas dobles al final
@@ -44,7 +45,7 @@ button.addEventListener("click", () => {
         else if (a[1].indexOf("[") > 0) {
 
             
-
+            llaves=true
             //creo un array separando directamente del texto inicial lo que se encontraba entre corchetes 
             //y luego se lo doy al json, lo guarda como un texto dentro del array
             let saveArray = [(texto.slice(texto.indexOf("["), texto.indexOf("]") + 1))];
@@ -58,6 +59,10 @@ button.addEventListener("click", () => {
                 json[trimTxt(a[0])] = trimTxt(a[1]);
             }
             catch { }
+        }
+    }
+        if(a[1].indexOf("]") > 0){
+            llaves=false
         }
     });
     alert(`El bloque de texto se a voncertido en un objeto JSON de nombre "json"`)
