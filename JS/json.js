@@ -10,10 +10,15 @@ function trimTxt(j){
 let texto = "";
 button.addEventListener("click", () => {
     texto = document.getElementById('textarea').value;
-    let llaves=false;
+
     //creo un array con la divicion que hace split dividiendo cuando encuentra una ","
     //y hago trim y slice para eliminar los espacios y las comillas que se crean cuando se divide con trimTxt
     let arr = (trimTxt(texto)).split(",");
+
+    //agrego esta bandera porque cuando separo por comas el array se rompe
+    //y para evitar eso guardo el array antes del split,salgo del ciclo cuando detecto un
+    //"[" y vuelvo al ciclo cuando detecto un "]"
+    let llaves=false;
     
     arr.forEach(element => {
         //a cada elemento del array arr lo divido y creo un nuevo array "a" 
