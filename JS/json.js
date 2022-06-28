@@ -60,7 +60,7 @@ button.addEventListener("click", () => {
             });
             
             
-            //json[(a[0].trim()).slice(1, -1)] = saveArray;
+            
            json[trimTxt(a[0])]=provisorio;
         }
         else {
